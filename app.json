@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/list/list",
+    "pages/user/user",
+    "pages/cart/cart"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#479de6",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "商店",
+    "backgroundColor": "#f8f8f8",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#479de6",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "assets/images/icons/iconfont-list.png",
+        "selectedIconPath": "assets/images/icons/iconfont-list-active.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "assets/images/icons/iconfont-cart.png",
+        "selectedIconPath": "assets/images/icons/iconfont-cart-active.png",
+        "text": "购物篮"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "assets/images/icons/iconfont-user.png",
+        "selectedIconPath": "assets/images/icons/iconfont-user-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": false
+}
