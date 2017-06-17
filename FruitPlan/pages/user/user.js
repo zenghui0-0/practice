@@ -1,66 +1,120 @@
 // pages/user/user.js
+const App = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    userInfo: {},
+    items: [
+      {
+        icon: '/assets/images/icons/iconfont-order.png',
+        text: '我的订单',
+        path: '/pages/cart/cart'
+      },
+      {
+        icon: '/assets/images/icons/iconfont-addr.png',
+        text: '收货地址',
+        path: '/pages/address/list/index'
+      },
+      {
+        icon: '/assets/images/icons/iconfont-kefu.png',
+        text: '联系客服',
+        path: '18521522201',
+      },
+      {
+        icon: '/assets/images/icons/iconfont-help.png',
+        text: '常见问题',
+        path: '/pages/help/list/index',
+      },
+    ],
+    settings: [
+      {
+        icon: '/assets/images/icons/iconfont-clear.png',
+        text: '清除缓存',
+        path: '0.0KB'
+      },
+      {
+        icon: '/assets/images/icons/iconfont-about.png',
+        text: '关于我们',
+        path: '/pages/about/index'
+      },
+    ]
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad() {
+    this.getUserInfo()
+    this.getStorageInfo()
   },
+  navigateTo(e) {
+    const index = e.currentTarget.dataset.index
+    const path = e.currentTarget.dataset.path
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+    switch (index) {
+      case 2:
+        App.WxService.makePhoneCall({
+          phoneNumber: path
+        })
+        break
+      default:
+        App.WxService.navigateTo(path)
+    }
   },
+  getUserInfo() {
+    const userInfo = App.globalData.userInfo
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+    if (userInfo) {
+      this.setData({
+        userInfo: userInfo
+      })
+      return
+    }
+
+    App.getUserInfo()
+      .then(data => {
+        console.log(data)
+        this.setData({
+          userInfo: data
+        })
+      })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+  getStorageInfo() {
+    App.WxService.getStorageInfo()
+      .then(data => {
+        console.log(data)
+        this.setData({
+          'settings[0].path': `${data.currentSize}KB`
+        })
+      })
   },
+  bindtap(e) {
+    const index = e.currentTarget.dataset.index
+    const path = e.currentTarget.dataset.path
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
+    switch (index) {
+      case 0:
+        App.WxService.showModal({
+          title: '友情提示',
+          content: '确定要清除缓存吗？',
+        })
+          .then(data => data.confirm == 1 && App.WxService.clearStorage())
+        break
+      default:
+        App.WxService.navigateTo(path)
+    }
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
+  logout() {
+    App.WxService.showModal({
+      title: '友情提示',
+      content: '确定要登出吗？',
+    })
+      .then(data => data.confirm == 1 && this.signOut())
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
+  signOut() {
+    App.HttpService.signOut()
+      .then(data => {
+        console.log(data)
+        if (data.meta.code == 0) {
+          App.WxService.removeStorageSync('token')
+          App.WxService.redirectTo('/pages/login/index')
+        }
+      })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })
