@@ -23,11 +23,6 @@ Page({
     ],
     settings: [
       {
-        icon: '/assets/images/icons/iconfont-clear.png',
-        text: '清除缓存',
-        path: '0.0KB'
-      }, 
-      {
         icon: '/assets/images/icons/iconfont-kefu.png',
         text: '联系客服',
         path: '18521522201',
@@ -36,7 +31,7 @@ Page({
   },
   onLoad() {
     this.getUserInfo()
-    this.getStorageInfo()
+    this.setStorageInfo()
   },
   navigateTo(e) {
     const index = e.currentTarget.dataset.index
@@ -44,9 +39,6 @@ Page({
 
     wx.navigateTo({
       url: path,
-      success: function () {
-        console.log('用户确定')
-      }
     })
   },
   getUserInfo() {
@@ -66,30 +58,13 @@ Page({
           userInfo: data
         })
       })
-  },
-  getStorageInfo() {
-    App.WxService.getStorageInfo()
-      .then(data => {
-        console.log(data)
-        this.setData({
-          'settings[0].path': `${data.currentSize}KB`
-        })
-      })
-  },
+  }, 
+  
   bindtap(e) {
     const index = e.currentTarget.dataset.index
     const path = e.currentTarget.dataset.path
     switch (index) {
       case 0:
-        wx.showModal({
-          title: '友情提示',
-          content: '确定要清除缓存吗？',
-          success: function () {
-            console.log('用户确定')
-          }
-        })
-        break
-      case 1:
         wx.makePhoneCall({
           phoneNumber: path,
           success : function() { 
@@ -98,26 +73,5 @@ Page({
         })
         break
     }
-  },
-  logout() {
-    wx.showModal({
-      title: '友情提示',
-      content: '确定要登出吗？T_T',
-      success: function(res){
-        if (res.confirm) {
-          console.log('用户点击确定')
-        }
-      }
-  })
-  },
-  signOut() {
-    App.HttpService.signOut()
-      .then(data => {
-        console.log(data)
-        if (data.meta.code == 0) {
-          App.WxService.removeStorageSync('token')
-          App.WxService.redirectTo('/pages/index/index')
-        }
-      })
   },
 })
