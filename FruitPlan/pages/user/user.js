@@ -31,7 +31,6 @@ Page({
   },
   onLoad() {
     this.getUserInfo()
-    this.setStorageInfo()
   },
   navigateTo(e) {
     const index = e.currentTarget.dataset.index
