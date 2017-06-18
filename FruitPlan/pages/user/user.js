@@ -8,17 +8,17 @@ Page({
       {
         icon: '/assets/images/icons/iconfont-order.png',
         text: '我的订单',
-        path: '/pages/cart/cart'
+        path: '/pages/user/about/about'
       },
       {
         icon: '/assets/images/icons/iconfont-addr.png',
         text: '收货地址',
-        path: '/pages/address/list/index'
+        path: '/pages/user/about/about'
       },
       {
         icon: '/assets/images/icons/iconfont-about.png',
         text: '关于我们',
-        path: '/pages/about/index'
+        path: '/pages/user/about/about'
       },
     ],
     settings: [
@@ -42,15 +42,12 @@ Page({
     const index = e.currentTarget.dataset.index
     const path = e.currentTarget.dataset.path
 
-    switch (index) {
-      case 2:
-        App.WxService.makePhoneCall({
-          phoneNumber: path
-        })
-        break
-      default:
-        App.WxService.navigateTo(path)
-    }
+    wx.navigateTo({
+      url: path,
+      success: function () {
+        console.log('用户确定')
+      }
+    })
   },
   getUserInfo() {
     const userInfo = App.globalData.userInfo
@@ -87,11 +84,8 @@ Page({
         wx.showModal({
           title: '友情提示',
           content: '确定要清除缓存吗？',
-          success: function (res) {
-            if (res.confirm) {
-              console.log(index)
-              console.log('用户点击确定')
-            }
+          success: function () {
+            console.log('用户确定')
           }
         })
         break
@@ -99,8 +93,8 @@ Page({
         wx.makePhoneCall({
           phoneNumber: path,
           success : function() { 
-            console.log(index)
-            console.log('成功拨打电话')}
+            console.log('成功拨打电话')
+          }
         })
         break
     }
