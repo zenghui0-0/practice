@@ -16,14 +16,9 @@ Page({
         path: '/pages/address/list/index'
       },
       {
-        icon: '/assets/images/icons/iconfont-kefu.png',
-        text: '联系客服',
-        path: '18521522201',
-      },
-      {
-        icon: '/assets/images/icons/iconfont-help.png',
-        text: '常见问题',
-        path: '/pages/help/list/index',
+        icon: '/assets/images/icons/iconfont-about.png',
+        text: '关于我们',
+        path: '/pages/about/index'
       },
     ],
     settings: [
@@ -31,11 +26,11 @@ Page({
         icon: '/assets/images/icons/iconfont-clear.png',
         text: '清除缓存',
         path: '0.0KB'
-      },
+      }, 
       {
-        icon: '/assets/images/icons/iconfont-about.png',
-        text: '关于我们',
-        path: '/pages/about/index'
+        icon: '/assets/images/icons/iconfont-kefu.png',
+        text: '联系客服',
+        path: '18521522201',
       },
     ]
   },
@@ -87,25 +82,39 @@ Page({
   bindtap(e) {
     const index = e.currentTarget.dataset.index
     const path = e.currentTarget.dataset.path
-
     switch (index) {
       case 0:
-        App.WxService.showModal({
+        wx.showModal({
           title: '友情提示',
           content: '确定要清除缓存吗？',
+          success: function (res) {
+            if (res.confirm) {
+              console.log(index)
+              console.log('用户点击确定')
+            }
+          }
         })
-          .then(data => data.confirm == 1 && App.WxService.clearStorage())
         break
-      default:
-        App.WxService.navigateTo(path)
+      case 1:
+        wx.makePhoneCall({
+          phoneNumber: path,
+          success : function() { 
+            console.log(index)
+            console.log('成功拨打电话')}
+        })
+        break
     }
   },
   logout() {
-    App.WxService.showModal({
+    wx.showModal({
       title: '友情提示',
-      content: '确定要登出吗？',
-    })
-      .then(data => data.confirm == 1 && this.signOut())
+      content: '确定要登出吗？T_T',
+      success: function(res){
+        if (res.confirm) {
+          console.log('用户点击确定')
+        }
+      }
+  })
   },
   signOut() {
     App.HttpService.signOut()
@@ -113,7 +122,7 @@ Page({
         console.log(data)
         if (data.meta.code == 0) {
           App.WxService.removeStorageSync('token')
-          App.WxService.redirectTo('/pages/login/index')
+          App.WxService.redirectTo('/pages/index/index')
         }
       })
   },
