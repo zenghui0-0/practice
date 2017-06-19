@@ -8,7 +8,7 @@ Page({
       {
         icon: '/assets/images/icons/iconfont-order.png',
         text: '我的订单',
-        path: '/pages/user/about/about'
+        path: '/pages/cart/cart'
       },
       
       {
@@ -36,11 +36,15 @@ Page({
   navigateTo(e) {
     const index = e.currentTarget.dataset.index
     const path = e.currentTarget.dataset.path
-
-    wx.navigateTo({
-      url: path,
-    })
-  },
+    switch (index) {
+      case 0:
+        wx.switchTab({ url:path})
+        break
+      case 1:
+        wx.navigateTo({url: path,})
+        break
+      }
+    },
   getUserInfo() {
     const userInfo = App.globalData.userInfo
 

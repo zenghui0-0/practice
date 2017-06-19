@@ -1,4 +1,4 @@
-// pages/user/order/oder.js
+// pages/usr/about/about.js
 Page({
 
   /**
