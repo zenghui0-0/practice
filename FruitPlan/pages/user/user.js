@@ -13,7 +13,7 @@ Page({
       {
         icon: '/assets/images/icons/iconfont-addr.png',
         text: '收货地址',
-        path: '/pages/user/about/about'
+        path: '/pages/user/address/list/list'
       },
       {
         icon: '/assets/images/icons/iconfont-about.png',
