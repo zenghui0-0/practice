@@ -4,10 +4,6 @@
     "pages/cart/cart",
     "pages/user/user",
     "pages/user/about/about",
-    "pages/user/address/list/list",
-    "pages/user/address/add/add",
-    "pages/user/address/edit/edit",
-    "pages/user/address/confirm/confirm",
     "pages/user/order/oder"
   ],
   "window":{

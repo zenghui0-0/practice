@@ -1,2 +1,3 @@
 <!--pages/user/about/about.wxml-->
 <text>pages/user/about/about.wxml</text>
+<view class="weui-cells" bindtap="chosseAddress">登出账号</view>

@@ -10,11 +10,7 @@ Page({
         text: '我的订单',
         path: '/pages/user/about/about'
       },
-      {
-        icon: '/assets/images/icons/iconfont-addr.png',
-        text: '收货地址',
-        path: '/pages/user/address/list/list'
-      },
+      
       {
         icon: '/assets/images/icons/iconfont-about.png',
         text: '关于我们',
@@ -22,6 +18,11 @@ Page({
       },
     ],
     settings: [
+      {
+        icon: '/assets/images/icons/iconfont-addr.png',
+        text: '收货地址',
+        path: ''
+      },
       {
         icon: '/assets/images/icons/iconfont-kefu.png',
         text: '联系客服',
@@ -64,6 +65,19 @@ Page({
     const path = e.currentTarget.dataset.path
     switch (index) {
       case 0:
+          wx.chooseAddress({
+            success: function (res) {
+              console.log(res.userName)
+              console.log(res.provinceName)
+              console.log(res.cityName)
+              console.log(res.countyName)
+              console.log(res.detailInfo)
+              console.log(res.nationalCode)
+              console.log(res.telNumber)
+            }
+          })
+          break
+      case 1:
         wx.makePhoneCall({
           phoneNumber: path,
           success : function() { 
