@@ -8,9 +8,8 @@ Page({
       {
         icon: '/assets/images/icons/iconfont-order.png',
         text: '我的订单',
-        path: '/pages/cart/cart'
+        path: '/pages/order/order'
       },
-      
       {
         icon: '/assets/images/icons/iconfont-about.png',
         text: '关于我们',
@@ -33,36 +32,34 @@ Page({
   onLoad() {
     this.getUserInfo()
   },
+  onShow() {
+
+  },
   navigateTo(e) {
     const index = e.currentTarget.dataset.index
     const path = e.currentTarget.dataset.path
-    switch (index) {
-      case 0:
-        wx.switchTab({ url:path})
-        break
-      case 1:
         wx.navigateTo({url: path,})
-        break
-      }
-    },
-  getUserInfo() {
-    const userInfo = App.globalData.userInfo
 
+    },
+ getUserInfo() {
+    var that = this ;
+    const userInfo = App.globalData.userInfo
     if (userInfo) {
-      this.setData({
+      that.setData({
         userInfo: userInfo
       })
-      return
     }
-
-    App.getUserInfo()
-      .then(data => {
-        console.log(data)
-        this.setData({
-          userInfo: data
-        })
+    else {
+      wx.getUserInfo({
+        success: function (res){
+          that.setData({
+            userInfo: res.userInfo
+          })
+        }
       })
+    }
   }, 
+
   
   bindtap(e) {
     const index = e.currentTarget.dataset.index

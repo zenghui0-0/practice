@@ -1,4 +1,4 @@
-// pages/usr/about/about.js
+// pages/order/order.js
 Page({
 
   /**
