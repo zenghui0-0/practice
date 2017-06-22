@@ -24,7 +24,7 @@ Page({
  }) 
  }, 
  loadCity:function(longitude,latitude){ 
- var page =this
+ var that = this
  wx.request({ 
  url: 'https://api.map.baidu.com/geocoder/v2/?ak=您的ak &location='+latitude+','+longitude+'&output=json', 
  data: {}, 
@@ -35,7 +35,7 @@ Page({
  // success 
  console.log(res); 
  var city=res.data.result.addressComponent.city; 
- page.setData({city:city}); 
+ that.setData({city:city}); 
  }, 
  fail: function() { 
  // fail 
