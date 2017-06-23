@@ -1,4 +1,6 @@
-assets/images/icons ·Å°´Å¥Í¼Æ¬
-assets/images/goods ·Å»õÎïÍ¼Æ¬£¨ÒÔºó¿ÉÒÔ×ªµ½serverÉÏÈ¥£©
-assets/styles ·ÅÒ»Ğ©ÑùÊ½±í¹©ÒıÈë
-utils ·ÅÒ»Ğ©ÅäÖÃ½Å±¾
+assets/images/icons æ”¾æŒ‰é’®å›¾ç‰‡
+assets/images/goods æ”¾è´§ç‰©å›¾ç‰‡ï¼ˆä»¥åå¯ä»¥è½¬åˆ°serverä¸Šå»ï¼‰
+assets/styles æ”¾ä¸€äº›æ ·å¼è¡¨ä¾›å¼•å…¥
+utils æ”¾ä¸€äº›é…ç½®è„šæœ¬
+
+ç™¾åº¦ç½‘ç›˜ï¼šhttps://pan.baidu.com/s/1o7DX7q6 æå–ç ï¼šztzq
