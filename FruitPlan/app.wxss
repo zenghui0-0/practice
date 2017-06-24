@@ -1,6 +1,2 @@
 /**import weui**/
 /* more infomations go https://github.com/weui/weui-wxss */
-
-@import 'assets/styles/weui.wxss';
-@import 'assets/styles/prompt.wxss';
-@import 'assets/styles/skyvow.wxss';

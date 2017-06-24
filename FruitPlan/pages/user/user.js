@@ -1,5 +1,5 @@
 // pages/user/user.js
-const App = getApp()
+var App = getApp()
 
 Page({
   data: {
@@ -60,7 +60,6 @@ Page({
     }
   }, 
 
-  
   bindtap(e) {
     const index = e.currentTarget.dataset.index
     const path = e.currentTarget.dataset.path

@@ -1,6 +1,0 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="tagss">
-  <button wx:for="{{tag}}" bindtap="onTag" wx:key="*this" id="{{index}}" disabled="{{tagDisabled[index]}}">{{item}}</button>
-  </view>
-</view>

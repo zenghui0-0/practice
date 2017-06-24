@@ -1,34 +1,37 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/home/home",
     "pages/cart/cart",
     "pages/user/user",
     "pages/user/about/about",
     "pages/order/order"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+  "window": {
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#787878",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "assets/images/icons/iconfont-list.png",
-      "selectedIconPath": "assets/images/icons/iconfont-list-active.png"
+      "pagePath": "pages/home/home",
+      "iconPath": "assets/images/icons/iconfont-home.png",
+      "selectedIconPath": "assets/images/icons/iconfont-home-active.png",
+      "navigationBarTitleText": "",
+      "text": "首页"
     },
     {
       "pagePath": "pages/cart/cart",
-      "text": "购物车",
       "iconPath": "assets/images/icons/iconfont-cart.png",
-      "selectedIconPath": "assets/images/icons/iconfont-cart-active.png"
+      "selectedIconPath": "assets/images/icons/iconfont-cart-active.png",
+      "navigationBarTitleText": "购物车",
+      "text": "购物车"
     },
     {
       "pagePath": "pages/user/user",
       "iconPath": "assets/images/icons/iconfont-user.png",
       "selectedIconPath": "assets/images/icons/iconfont-user-active.png",
+      "navigationBarTitleText": "",
       "text": "我的"
     }]
   }

@@ -5,8 +5,8 @@
 <view class="weui-cells" bindtap="getLocation">获取位置</view>
 <!--view class="weui-cells" bindtap="login">登陆</view-->
 <view class="weui-cells" bindtap="goPay">去支付</view>
-<view class="weui-cells" bindtap="getUserInfo">获取用户信息</view>
 <button class="weui-cells" type="default-light" open-type="contact" size="20" session-from="weapp">联系客服 </button>
-
+<text>{{userInfo.nickName }}</text>
+<text>{{formatted_address}} {{district}}</text>
 
 <!--text>{{latitude}}</text-->
