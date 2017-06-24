@@ -42,7 +42,7 @@ Page({
 
     },
  getUserInfo() {
-    var that = this ;
+    var that = this ;//在下一个函数没开始之前复制一下自己，这个时候的this还是指getApp（），在下个函数内部this就另有所指了
     const userInfo = App.globalData.userInfo
     if (userInfo) {
       that.setData({
