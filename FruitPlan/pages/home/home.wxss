@@ -6,32 +6,26 @@
   overflow: hidden;
   background: rgba(7, 17, 27, 0.5);
 }
-
 .header .content-wrapper {
   position: relative;
   padding: 24px 12px 18px 24px;
   font-size: 0;
 }
-
 .header .content-wrapper .avatar {
   display: inline-block;
   vertical-align: top;
 }
-
 .header .content-wrapper .avatar img {
   border-radius: 2px;
 }
-
 .header .content-wrapper .content {
   display: inline-block;
   font-size: 14px;
   margin-left: 16px;
 }
-
 .header .content-wrapper .content .title {
   margin: 2px 0 8px 0;
 }
-
 .header .content-wrapper .content .title .brand {
   display: inline-block;
   vertical-align: top;
@@ -41,20 +35,17 @@
   background-size: 30px 18px;
   background-repeat: no-repeat;
 }
-
 .header .content-wrapper .content .title .name {
   margin-left: 6px;
   font-size: 16px;
   line-height: 18px;
   font-weight: bold;
 }
-
 .header .content-wrapper .content .description {
   margin-bottom: 10px;
   line-height: 12px;
   font-size: 12px;
 }
-
 .header .content-wrapper .content .support .icon {
   display: inline-block;
   width: 12px;
@@ -74,12 +65,10 @@
           &.special
             bg-image('special_1')*/
 }
-
 .header .content-wrapper .content .support .text {
   line-height: 12px;
   font-size: 12px;
 }
-
 .header .content-wrapper .content .supports-count {
   position: absolute;
   right: 12px;
@@ -91,18 +80,15 @@
   background: rgba(0, 0, 0, 0.2);
   text-align: content;
 }
-
 .header .content-wrapper .content .supports-count .count {
   font-size: 10px;
   vertical-align: top;
 }
-
 .header .content-wrapper .content .supports-count .icon {
   margin-left: 2px;
   line-height: 24px;
   font-size: 10px;
 }
-
 .header .bulletin-wrapper {
   position: relative;
   background-color: rgba(7, 17, 27, 0.2);
@@ -113,7 +99,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
 .header .bulletin-wrapper .bulletin-title {
   display: inline-block;
   vertical-align: top;
@@ -124,20 +109,17 @@
   background-size: 22px 12px;
   background-repeat: no-repeat;
 }
-
 .header .bulletin-wrapper .bulletin-text {
   vertical-align: top;
   margin: 0 4px;
   font-size: 10px;
 }
-
 .header .bulletin-wrapper .icon {
   position: absolute;
   font-size: 20px;
   right: 12px;
   top: 0px;
 }
-
 .header .background {
   position: absolute;
   top: 0;
@@ -147,7 +129,6 @@
   z-index: -1;
   filter: blur(10px);
 }
-
 .header .background .detail {
   position: fixed;
   z-index: 100;
@@ -159,3 +140,38 @@
   background: rgba(7, 17, 27, 0.8);
   -webkit-backdrop-filter: blur(10px);
 }
+
+/*tab*/
+.swiper-tab{
+  width: 100%; 
+  border-bottom: 2rpx solid #777777; 
+  text-align: center; 
+  line-height: 80rpx;
+}
+.swiper-tab-list{
+  font-size: 30rpx; 
+  font-weight:bold;
+  display: inline-block; 
+  width: 20%; 
+  color: #777777; 
+}
+.on{
+  color: #000000; 
+  border-bottom: 0rpx solid #fff;
+
+}
+.off{
+  color: #000000;
+  background-color: #D3D3D3;
+}
+.swiper-box{ 
+  display: block;
+ /* height: 100%;*/
+  width: 100%;
+  overflow: hidden;
+ }
+.swiper-box view{ 
+  text-align: center; 
+}
+
+/*tab .content*/

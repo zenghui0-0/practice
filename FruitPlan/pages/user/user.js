@@ -31,6 +31,7 @@ Page({
   },
   onLoad() {
     this.getUserInfo()
+    this.getLocation()
   },
   onShow() {
 
@@ -59,7 +60,35 @@ Page({
       })
     }
   }, 
-
+ getLocation() {
+   var that = this
+   wx.getLocation({
+     type: 'wgs84',
+     success: function (res) {
+       var latitude = res.latitude
+       var longitude = res.longitude
+       that.setData({
+         latitude: res.latitude,
+         longitude: res.longitude
+       })
+       wx.request({
+         //url: 'https://api.map.baidu.com/geocoder/v2/?ak=cVHe9GgtnsFBSSANCcG8QIEv5GCY1rbQ&location=' + latitude + ',' + longitude + '&output=json',
+         url: 'https://api.map.baidu.com/geocoder/v2/?ak=cVHe9GgtnsFBSSANCcG8QIEv5GCY1rbQ&location=26.475351,116.015424&output=json',
+         data: {
+         },
+         header: {
+           'Content-Type': 'application/json'
+         },
+         success: function (res) {
+           that.setData({
+             district: res.data.result.addressComponent.district,
+             formatted_address: res.data.result.formatted_address
+           })
+         }
+       })
+     }
+   })
+ }, 
   bindtap(e) {
     const index = e.currentTarget.dataset.index
     const path = e.currentTarget.dataset.path
