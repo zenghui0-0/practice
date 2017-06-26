@@ -6,6 +6,23 @@ Page({
     winHeight: 0,
     // tab切换 
     currentTab: 0,
+    //商品
+    goods: [
+       {
+        "name":"普通西瓜",
+        "price": 10,
+        "sellCount": 229,
+        "Count": 0,
+        "icon":"/assets/images/water_melon.png",
+      },
+       {
+        "name":"冰西瓜",
+        "price":"20",
+        "sellCount": 229,
+        "Count": 0,
+        "icon":"/assets/images/ice_water_melon.png",
+      },
+    ]
   },
  
   onLoad(){

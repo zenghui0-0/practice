@@ -1,4 +1,4 @@
-<!--index.wxml-->
+
 <!--head -->
 <view class="header">
     <view class="content-wrapper">
@@ -41,7 +41,48 @@
  <view class="swiper-tab-list {{currentTab==3 ? 'on' : 'off'}}" data-current="3" bindtap="swichNav">待收货</view>
  <view class="swiper-tab-list {{currentTab==4 ? 'on' : 'off'}}" data-current="4" bindtap="swichNav">已完成</view>
 </view>
+
+
+
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+
+ <swiper-item>
+
+    <scroll-view scroll-y="true" style="height: 560px" class="goods-wrapper">
+      <view wx:for="{{goods}}" class="good-item" wx:for-item="good" data-good="{{good}}">
+        <view class="icon">
+          <image src="{{good.icon}}" style="width: 57px;height: 57px"></image>
+        </view>
+        <view class="content">
+          <view class="name">{{good.name}}</view>
+          <view class="extra">
+            <text class="count">月售{{good.sellCount}}</text>
+          </view>
+          <view class="price">
+            <view class="now">￥{{good.price}}</view>
+          </view>
+
+          <!--cartControl-->
+          <!--view class="cartControl-wrapper">
+            <view class="cartControl">
+              <view name="fade">
+                <view class="cart-decrease" wx:if="{{food.Count > 0}}" data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="decreaseCart">
+                  <view class="inner iconfont icon-jian" style="font-size:24px;color:#00A0DC;"></view>
+                </view>
+                <view class="cart-count" wx:if="{{food.Count > 0 }}">{{food.Count}}</view>
+                <view class=" iconfont icon-jia cart-add " style="color:#00A0DC; " data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="addCart"></view>
+              </view>
+            </view>
+          </view-->
+        </view>
+      </view>
+    </scroll-view>
+
+ 
+ </swiper-item>
+ 
+ 
+ 
  <swiper-item>
   <view>--暂无更多--</view>
  </swiper-item>
@@ -52,10 +93,11 @@
   <view>--暂无更多--</view>
  </swiper-item>
  <swiper-item>
-  <view>--暂无更多--</view>
+ <scroll-view scroll-y="true" style="height: 560px">
+  <view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view>
+   </scroll-view>
  </swiper-item>
- <swiper-item>
-  <view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view>
- </swiper-item>
+
 </swiper>
+
 <!--tab -->

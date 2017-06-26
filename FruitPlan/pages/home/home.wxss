@@ -1,4 +1,7 @@
-
+.container {
+	height: 100%;
+	overflow: hidden;
+}
 /* head */
 .header {
   position: relative;
@@ -175,3 +178,5 @@
 }
 
 /*tab .content*/
+
+/*goods */
