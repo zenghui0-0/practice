@@ -55,7 +55,7 @@
             <view class="price">
               <text>{{good.price}}</text>
               <text class="unit">元</text>
-              <view class="amount">/{{good.amount}}</view>
+              <view class="amount">/ {{good.amount}}</view>
             </view>
 
 

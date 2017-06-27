@@ -14,6 +14,7 @@ Page({
         "price": 10,
         "amount": "500g",
         "icon":"/assets/images/water_melon.png",
+        "Count": 0,
       },
        {
         "name":"冰西瓜",
@@ -21,12 +22,14 @@ Page({
         "price":"20",
         "amount": "500g",
         "icon":"/assets/images/ice_water_melon.png",
+        "Count": 0,
        }, {
          "name": "普通西瓜",
          "description": "不红不要钱",
          "price": 10,
          "amount": "500g",
          "icon": "/assets/images/water_melon.png",
+         "Count": 0,
        },
        {
          "name": "冰西瓜",
@@ -34,12 +37,14 @@ Page({
          "price": "20",
          "amount": "500g",
          "icon": "/assets/images/ice_water_melon.png",
+         "Count": 0,
        }, {
          "name": "普通西瓜",
          "description": "不红不要钱",
          "price": 10,
          "amount": "500g",
          "icon": "/assets/images/water_melon.png",
+         "Count": 0,
        },
     ]
   },
