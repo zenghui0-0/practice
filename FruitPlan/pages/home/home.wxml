@@ -44,14 +44,14 @@
 
 
 
-<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+<swiper current="{{currentTab}}" class="goods" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
 
- <swiper-item>
+ <swiper-item class="menu-wrapper"> 
 
     <scroll-view scroll-y="true" style="height: 560px" class="goods-wrapper">
       <view wx:for="{{goods}}" class="good-item" wx:for-item="good" data-good="{{good}}">
         <view class="icon">
-          <image src="{{good.icon}}" style="width: 57px;height: 57px"></image>
+          <image src="{{good.icon}}" style="width: 280rpx;height: 280rpx"></image>
         </view>
         <view class="content">
           <view class="name">{{good.name}}</view>

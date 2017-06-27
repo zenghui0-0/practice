@@ -21,7 +21,33 @@ Page({
         "sellCount": 229,
         "Count": 0,
         "icon":"/assets/images/ice_water_melon.png",
-      },
+       }, {
+         "name": "普通西瓜",
+         "price": 10,
+         "sellCount": 229,
+         "Count": 0,
+         "icon": "/assets/images/water_melon.png",
+       },
+       {
+         "name": "冰西瓜",
+         "price": "20",
+         "sellCount": 229,
+         "Count": 0,
+         "icon": "/assets/images/ice_water_melon.png",
+       }, {
+         "name": "普通西瓜",
+         "price": 10,
+         "sellCount": 229,
+         "Count": 0,
+         "icon": "/assets/images/water_melon.png",
+       },
+       {
+         "name": "冰西瓜",
+         "price": "20",
+         "sellCount": 229,
+         "Count": 0,
+         "icon": "/assets/images/ice_water_melon.png",
+       },
     ]
   },
  
