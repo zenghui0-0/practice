@@ -3,11 +3,11 @@
 <view class="header">
     <view class="content-wrapper">
       <view class="avatar">
-        <image src="/assets/images/home/cover.jpg" style="width:64px;height:64px;"></image>
+        <image src="/assets/images/home/cover.jpg" style="width:128rpx;height:128rpx;"></image>
       </view>
       <view class="content">
         <view class="title">
-          <image src="/assets/images/home/brand.png" style="width:30px;height:18px;"></image>
+          <image src="/assets/images/home/brand.png" style="width:60rpx;height:36rpx;"></image>
           <span class="name">冰爽夏季</span>
         </view>
         <view class="description">
@@ -15,7 +15,7 @@
         </view>
         <view v-if="seller.supports" class="support">
           <span class="icon" :class="classMap[seller.supports[0].type]">
-            <image src="/assets/images/home/decrease.png" style="width:12px;height:12px;"></image>
+            <image src="/assets/images/home/decrease.png" style="width:24rpx;height:24rpx;"></image>
           </span>
           <span class="text">在线支付满28减5</span>
         </view>
@@ -25,7 +25,7 @@
       </view>
     </view>
     <view class="bulletin-wrapper">
-      <image src="/assets/images/home/bulletin.png" style="width:22px;height:12px;"></image>
+      <image src="/assets/images/home/bulletin.png" style="width:44rpx;height:24rpx;"></image>
       <span class="bulletin-text">"这是公告"</span>
     </view>
     <view class="background">
@@ -38,31 +38,27 @@
  <view class="swiper-tab-list {{currentTab==0 ? 'on' : 'off'}}" data-current="0" bindtap="swichNav">当季热销</view>
  <view class="swiper-tab-list {{currentTab==1 ? 'on' : 'off'}}" data-current="1" bindtap="swichNav">水果拼盘</view>
  <view class="swiper-tab-list {{currentTab==2 ? 'on' : 'off'}}" data-current="2" bindtap="swichNav">果汁饮料</view>
- <view class="swiper-tab-list {{currentTab==3 ? 'on' : 'off'}}" data-current="3" bindtap="swichNav">待收货</view>
- <view class="swiper-tab-list {{currentTab==4 ? 'on' : 'off'}}" data-current="4" bindtap="swichNav">已完成</view>
+ <view class="swiper-tab-list {{currentTab==3 ? 'on' : 'off'}}" data-current="3" bindtap="swichNav">已完成</view>
 </view>
 
 
 
-<swiper current="{{currentTab}}" class="goods" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
-
- <swiper-item class="menu-wrapper"> 
-
-    <scroll-view scroll-y="true" style="height: 560px" class="goods-wrapper">
-      <view wx:for="{{goods}}" class="good-item" wx:for-item="good" data-good="{{good}}">
-        <view class="icon">
-          <image src="{{good.icon}}" style="width: 280rpx;height: 280rpx"></image>
-        </view>
-        <view class="content">
-          <view class="name">{{good.name}}</view>
-          <view class="extra">
-            <text class="count">月售{{good.sellCount}}</text>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:1500rpx" bindchange="bindChange">
+    <swiper-item class="goods"> 
+        <view wx:for="{{goods}}" class="good-item" wx:for-item="good" data-good="{{good}}">
+          <view class="icon">
+            <image src="{{good.icon}}" style="width: 185rpx;height: 185rpx"></image>
           </view>
-          <view class="price">
-            <view class="now">￥{{good.price}}</view>
-          </view>
+          <view class="content">
+            <view class="name">{{good.name}}</view>
+            <view class="description">{{good.description}}</view>
+            <view class="price">
+              <text>{{good.price}}</text>
+              <text class="unit">元</text>
+              <view class="amount">/{{good.amount}}</view>
+            </view>
 
-          <!--cartControl-->
+
           <!--view class="cartControl-wrapper">
             <view class="cartControl">
               <view name="fade">
@@ -76,16 +72,10 @@
           </view-->
         </view>
       </view>
-    </scroll-view>
-
- 
  </swiper-item>
  
  
  
- <swiper-item>
-  <view>--暂无更多--</view>
- </swiper-item>
  <swiper-item>
   <view>--暂无更多--</view>
  </swiper-item>

@@ -5,7 +5,6 @@
 	flex-direction: column;
 	padding: 50rpx;
 	align-items: center;
-	background: #787878;
 }
 
 .userinfo-avatar {
@@ -16,7 +15,7 @@
 }
 
 .userinfo-nickname {
-	color: #fff;
+	color: #000000;
 }
 
 .badge {
