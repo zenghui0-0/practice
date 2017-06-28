@@ -43,9 +43,9 @@
 
 
 
-  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:1500rpx" bindchange="bindChange">
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:1000rpx" bindchange="bindChange">
     <swiper-item class="goods"> 
-        <view wx:for="{{goods}}" class="good-item" wx:for-item="good" data-good="{{good}}">
+        <view wx:for="{{goods}}" class="good-item" wx:for-item="good" wx:for-index="index" data-good="{{good}}">
           <view class="icon">
             <image src="{{good.icon}}" style="width: 185rpx;height: 185rpx"></image>
           </view>
@@ -57,20 +57,21 @@
               <text class="unit">元</text>
               <view class="amount">/ {{good.amount}}</view>
             </view>
+          </view>
 
-
-          <!--view class="cartControl-wrapper">
-            <view class="cartControl">
-              <view name="fade">
-                <view class="cart-decrease" wx:if="{{food.Count > 0}}" data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="decreaseCart">
-                  <view class="inner iconfont icon-jian" style="font-size:24px;color:#00A0DC;"></view>
-                </view>
-                <view class="cart-count" wx:if="{{food.Count > 0 }}">{{food.Count}}</view>
-                <view class=" iconfont icon-jia cart-add " style="color:#00A0DC; " data-item-index="{{index}}" data-parentIndex="{{parentIndex}}" catchtap="addCart"></view>
+          <view class="cartControl">
+            <block  wx:if="{{good.store > 0}}">
+              <view wx:if="{{good.selected}}">
+                <view class="add"  data-index="{{index}}" catchtap="changeState">移出购物车</view>
               </view>
-            </view>
-          </view-->
-        </view>
+              <view  wx:else>
+                <view class="remove" data-index="{{index}}" catchtap="changeState">立即下单</view>
+              </view>
+            </block>
+            <block wx:else>
+              <view class="sellout">今日售完</view>
+            </block>
+          </view>
       </view>
  </swiper-item>
  
@@ -83,7 +84,7 @@
   <view>--暂无更多--</view>
  </swiper-item>
  <swiper-item>
- <scroll-view scroll-y="true" style="height: 560px">
+ <scroll-view scroll-y="true" style="height: 1000rpx">
   <view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view><view>--暂无更多--</view>
    </scroll-view>
  </swiper-item>

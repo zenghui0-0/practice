@@ -11,40 +11,45 @@ Page({
        {
         "name":"普通西瓜",
         "description": "不红不要钱",
-        "price": 10,
+        "store": "0",
+        "price": "10",
         "amount": "500g",
         "icon":"/assets/images/water_melon.png",
-        "Count": 0,
+        "selected": false,
       },
        {
         "name":"冰西瓜",
         "description": "不红不要钱",
+        "store": "999",
         "price":"20",
         "amount": "500g",
         "icon":"/assets/images/ice_water_melon.png",
-        "Count": 0,
+        "selected": true,
        }, {
          "name": "普通西瓜",
          "description": "不红不要钱",
-         "price": 10,
+         "store": "999",
+         "price": "10",
          "amount": "500g",
          "icon": "/assets/images/water_melon.png",
-         "Count": 0,
+         "selected": true,
        },
        {
          "name": "冰西瓜",
          "description": "不红不要钱",
+         "store": "999",
          "price": "20",
          "amount": "500g",
          "icon": "/assets/images/ice_water_melon.png",
-         "Count": 0,
+         "selected": false,
        }, {
          "name": "普通西瓜",
          "description": "不红不要钱",
-         "price": 10,
+         "store": "999",
+         "price": "10",
          "amount": "500g",
          "icon": "/assets/images/water_melon.png",
-         "Count": 0,
+         "selected": true,
        },
     ]
   },
@@ -75,6 +80,23 @@ Page({
     } else {
       that.setData({
         currentTab: e.target.dataset.current
+      })
+    }
+  },
+  changeState(e){
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    var state = this.data.goods[index].selected;
+    if (state){
+      this.data.goods[index].selected = false;
+      that.setData({
+          goods: this.data.goods
+        })
+    }
+    else{
+      this.data.goods[index].selected = true;
+      that.setData({
+        goods: this.data.goods
       })
     }
   }
