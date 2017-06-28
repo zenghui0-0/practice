@@ -59,7 +59,11 @@
             </view>
           </view>
 
+          
+
           <view class="cartControl">
+          <view class="undecide">还没决定放什么
+          </view>
             <block  wx:if="{{good.store > 0}}">
               <view wx:if="{{good.selected}}">
                 <view class="add"  data-index="{{index}}" catchtap="changeState">移出购物车</view>

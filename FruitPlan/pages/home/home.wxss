@@ -223,22 +223,28 @@
   margin: 15rpx 10rpx;
 }
 .goods .good-item .cartControl{
-  margin: 10rpx 20rpx ;
+  margin: 5rpx 20rpx ;
   font-size: 30rpx;
 }
 .goods .good-item .cartControl .add{
+  margin: 60rpx 20rpx 0rpx 0rpx;
+  background-color: khaki;
   border: solid;
   border-radius:5%;
   border-color: #000000;
   border-width: 1rpx;
 }
 .goods .good-item .cartControl .remove{
+  margin: 60rpx 20rpx 0rpx 0rpx;
+  background-color: khaki;
   border: solid;
   border-radius:5%;
   border-color: #000000;
   border-width: 1rpx;
 }
 .goods .good-item .cartControl .sellout{
+  margin: 60rpx 20rpx 0rpx 0rpx;
+  background-color: khaki;
   border: solid;
   border-radius:5%;
   border-color: #000000;
