@@ -1,4 +1,5 @@
 // pages/cart/cart.js
+const App = getApp()
 Page({
 
   /**
@@ -10,42 +11,43 @@ Page({
         fruitId:1,
         fruitName:"香蕉",
         count:3,//加入的数量
-        price:3.5,//单价
+        price:350,//单价
       },
       {
         fruitId: 2,
         fruitName: "苹果",
         count: 2,//加入的数量
-        price: 5.2,//单价
+        price: 520,//单价
       },
       {
         fruitId: 3,
         fruitName: "蜜桃",
         count: 2,//加入的数量
-        price: 8.62,//单价
+        price: 862,//单价
       },
     ],
+    sumPrice: 0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.calSum();
   },
 
   /**
@@ -94,6 +96,7 @@ Page({
         this.setData({
           cartData:cartData,
         });
+        this.calSum();
       }
     }
     
@@ -117,7 +120,8 @@ Page({
                 cartData.splice(index,1);
                 that.setData({
                   cartData:cartData,
-                })
+                });
+                that.calSum();
               }
             }
           });
@@ -127,7 +131,41 @@ Page({
         this.setData({
           cartData: cartData,
         });
+        this.calSum();
       }
     }
+  },
+
+  calSum:function()
+  {
+    var sumPrice = 0;
+    for(var i = 0; i < this.data.cartData.length; i++)
+    {
+      var item = this.data.cartData[i];
+      sumPrice += item.price * item.count;
+    }
+    this.setData({
+      sumPrice: sumPrice,
+    });
+  },
+
+  //下单
+  onSubmit:function()
+  {
+
+  },
+  onClear:function()
+  {
+    this.setData({
+      cartData:[],
+      sumPrice: 0,
+    });
+  },
+  goToHome:function()
+  {
+    wx.switchTab({
+      url: '../../pages/home/home',
+    });
   }
+
 })

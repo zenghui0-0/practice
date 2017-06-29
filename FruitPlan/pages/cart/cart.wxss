@@ -1,1 +1,46 @@
 /* pages/cart/cart.wxss */
+page {
+ height: 100%;
+}
+
+.scroll{
+  height: 490px;
+}
+.totalView {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 0px 0px 0px;
+  align-items: center;
+  height: 60px;
+}
+
+.sum {
+  color: #ff0000;
+  align-content: center;
+}
+
+.btnContain {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 10px;
+}
+
+.empty {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emptyText {
+  /*position: absolute;*/
+  margin-top: 250px;
+  align-content: center;
+}
+
+.navigatorBtn {
+  width:50%;
+  margin-top: 10px;
+}

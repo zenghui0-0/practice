@@ -1,7 +1,19 @@
 <!--pages/cart/cart.wxml-->
-<import src="../common/item/cartItem"/>
-<view class="">
-  <scroll-view scroll-y="{{true}}">
+<import src="item/cartItem"/>
+<view wx:if="{{cartData.length > 0}}">
+  <scroll-view class="scroll" scroll-y="{{true}}">
     <template is="cartItem" wx:for="{{cartData}}" wx:key="" data="{{...item}}"></template>
   </scroll-view>
+
+  <view class="totalView">
+    <text class="sum">总计:{{sumPrice / 100.0}}元</text>
+    <view class="btnContain">
+      <button type="primary" bindtap="onSubmit">立即下单</button>
+      <button bindtap="onClear">全部清空</button>
+    </view>
+  </view>
+</view>
+<view wx:else class="empty">
+  <text class="emptyText">购物车还没有物品，快去挑选商品吧！</text>
+  <button class="navigatorBtn" bindtap="goToHome" type="primary">马上去看看</button>
 </view>
