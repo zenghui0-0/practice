@@ -192,26 +192,26 @@
   border-bottom: 5rpx solid #E5E5E5;
 }
 .goods .good-item .icon{
-  margin: 10rpx 20rpx 5rpx;
+  margin: 15rpx 30rpx 15rpx 40rpx;
 }
 .goods .good-item .content{
-  margin: 10rpx 20rpx 5rpx;
+  margin: 10rpx 20rpx 10rpx;
 }
 .goods .good-item .content .name{
   display: flex;
   font-size: 35rpx;
-  margin: 10rpx 0rpx;
+  margin: 10rpx 5rpx;
 }
 .goods .good-item .content .description{
   display: flex;
   font-size: 25rpx;
   color: #777777;
-  margin: 10rpx 0rpx;
+  margin: 10rpx 5rpx;
 }
 .goods .good-item .content .price{
   display: flex;
   color:#FF4500;
-  margin: 30rpx 0rpx 0rpx;
+  margin: 40rpx 5rpx 0rpx;
 }
 .goods .good-item .content .price .unit{
   font-size: 22rpx;
@@ -223,7 +223,7 @@
   margin: 15rpx 10rpx;
 }
 .goods .good-item .cartControl{
-  margin: 5rpx 20rpx ;
+  margin: 10rpx 20rpx ;
   font-size: 30rpx;
 }
 .goods .good-item .cartControl .add{
