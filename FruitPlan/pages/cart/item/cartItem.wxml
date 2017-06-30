@@ -3,7 +3,7 @@
     <image src="{{'../../assets/images/goods/' + fruitId + '.png'}}" style="width: 100px;height: 100px"></image>
     <view style="width: 300rpx; align-items: center;padding: 50rpx 0px 0px 30rpx;">
       <text style="display: flex;">{{fruitName}}</text>
-      <text style="display: flex;color: #ff0000">{{ price * count}}元</text>
+      <text style="display: flex;color: #ff0000">{{ price * count / 100.0}}元</text>
     </view>
     <view style="display: flex;flex-direction: row;padding: 0px 10px 0px 10px;align-items:center;">
       <button type="warn" data-fruitid="{{fruitId}}" bindtap="onSubCount">-</button>
