@@ -55,16 +55,7 @@ Page({
   },
  
   onLoad(){
-    var that = this;
-    // 获取系统信息 
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          winWidth: res.windowWidth,
-          winHeight: res.windowHeight
-        });
-      }
-    });
+   
   },
   
   // 滑动切换tab 

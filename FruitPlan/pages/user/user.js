@@ -30,21 +30,20 @@ Page({
     ]
   },
   onLoad() {
-    this.getUserInfo()
-    this.getLocation()
+    this.getUserInfo();
+    this.getLocation();
   },
   onShow() {
 
   },
   navigateTo(e) {
-    const index = e.currentTarget.dataset.index
-    const path = e.currentTarget.dataset.path
-        wx.navigateTo({url: path,})
-
+    const index = e.currentTarget.dataset.index;
+    const path = e.currentTarget.dataset.path;
+    wx.navigateTo({url: path,})
     },
  getUserInfo() {
-    var that = this ;//在下一个函数没开始之前复制一下自己，这个时候的this还是指getApp（），在下个函数内部this就另有所指了
-    const userInfo = App.globalData.userInfo
+    var that = this ;
+    var userInfo = App.globalData.userInfo;
     if (userInfo) {
       that.setData({
         userInfo: userInfo
@@ -65,11 +64,11 @@ Page({
    wx.getLocation({
      type: 'wgs84',
      success: function (res) {
-       var latitude = res.latitude
-       var longitude = res.longitude
+       var latitude = res.latitude;
+       var longitude = res.longitude;
        that.setData({
          latitude: res.latitude,
-         longitude: res.longitude
+         longitude: res.longitude,
        })
        wx.request({
          //url: 'https://api.map.baidu.com/geocoder/v2/?ak=cVHe9GgtnsFBSSANCcG8QIEv5GCY1rbQ&location=' + latitude + ',' + longitude + '&output=json',
@@ -90,8 +89,8 @@ Page({
    })
  }, 
   bindtap(e) {
-    const index = e.currentTarget.dataset.index
-    const path = e.currentTarget.dataset.path
+    const index = e.currentTarget.dataset.index;
+    const path = e.currentTarget.dataset.path;
     switch (index) {
       case 0:
           wx.chooseAddress({
