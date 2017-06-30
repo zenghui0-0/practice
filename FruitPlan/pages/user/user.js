@@ -4,6 +4,10 @@ var App = getApp()
 Page({
   data: {
     userInfo: {},
+    location: {
+      latitude : '',
+      longitude: '',
+    },
     items: [
       {
         icon: '/assets/images/icons/iconfont-order.png',
@@ -25,16 +29,20 @@ Page({
       {
         icon: '/assets/images/icons/iconfont-kefu.png',
         text: '联系客服',
-        path: '18521522201',
+        path: '185****201',
+      },
+      {
+        icon: '/assets/images/icons/setting.png',
+        text: '个人设置',
+        path: '',
       },
     ]
   },
   onLoad() {
-    this.getUserInfo();
-    this.getLocation();
+    this.getLocation()
   },
   onShow() {
-
+    this.getUserInfo()
   },
   navigateTo(e) {
     const index = e.currentTarget.dataset.index;
@@ -43,19 +51,22 @@ Page({
     },
  getUserInfo() {
     var that = this ;
-    var userInfo = App.globalData.userInfo;
-    if (userInfo) {
-      that.setData({
-        userInfo: userInfo
-      })
-    }
-    else {
-      wx.getUserInfo({
-        success: function (res){
-          that.setData({
-            userInfo: res.userInfo
+    var userInfo = this.data.userInfo;
+    if (this.data.userInfo) {
+      wx.login({
+        success: function () {
+          wx.getUserInfo({
+            success: function (res) {
+              that.setData({
+                userInfo: res.userInfo
+              })
+            }
           })
         }
+      });
+    } else {
+      that.setData({
+        userInfo: userInfo
       })
     }
   }, 
@@ -104,15 +115,29 @@ Page({
               console.log(res.telNumber)
             }
           })
-          break
+          break;
       case 1:
         wx.makePhoneCall({
-          phoneNumber: path,
+          phoneNumber: 121,
           success : function() { 
             console.log('成功拨打电话')
           }
         })
-        break
+        break;
+      case 2:
+        wx.openSetting({
+          success: (res) => {
+            console.log(res)
+            /*
+             * res.authSetting = {
+             *   "scope.userInfo": true,
+             *   "scope.userLocation": true
+             * }
+             */
+          }
+
+        })
+        break;
     }
   },
 })
