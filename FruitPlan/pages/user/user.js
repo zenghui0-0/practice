@@ -118,7 +118,7 @@ Page({
           break;
       case 1:
         wx.makePhoneCall({
-          phoneNumber: 121,
+          phoneNumber: '123',
           success : function() { 
             console.log('成功拨打电话')
           }
@@ -135,7 +135,6 @@ Page({
              * }
              */
           }
-
         })
         break;
     }

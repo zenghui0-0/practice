@@ -9,47 +9,42 @@ Page({
     //商品
     goods: [
        {
-        "name":"普通西瓜",
-        "description": "不红不要钱",
+        "name":"普通小西瓜约5斤",
+        "tag": "红",
         "store": "0",
         "price": "10",
-        "amount": "500g",
         "icon":"/assets/images/water_melon.png",
-        "selected": false,
+        "Count": 0,
       },
        {
-        "name":"冰西瓜",
-        "description": "不红不要钱",
+        "name":"冰西瓜半个约5斤",
+        "tag": "红",
         "store": "999",
         "price":"20",
-        "amount": "500g",
         "icon":"/assets/images/ice_water_melon.png",
-        "selected": true,
+        "Count": 0,
        }, {
-         "name": "普通西瓜",
-         "description": "不红不要钱",
-         "store": "999",
-         "price": "10",
-         "amount": "500g",
-         "icon": "/assets/images/water_melon.png",
-         "selected": true,
-       },
-       {
-         "name": "冰西瓜",
-         "description": "不红不要钱",
+         "name": "无籽大西瓜约10斤",
+         "tag": "红",
          "store": "999",
          "price": "20",
-         "amount": "500g",
+         "icon": "/assets/images/water_melon.png",
+         "Count": 0,
+       },
+       {
+         "name": "冰西瓜半个约5斤",
+         "tag": "红",
+         "store": "999",
+         "price": "20",
          "icon": "/assets/images/ice_water_melon.png",
-         "selected": false,
+         "Count": 0,
        }, {
-         "name": "普通西瓜",
-         "description": "不红不要钱",
+         "name": "普通小西瓜约5斤",
+         "tag": "红",
          "store": "999",
          "price": "10",
-         "amount": "500g",
          "icon": "/assets/images/water_melon.png",
-         "selected": true,
+         "Count": 0,
        },
     ]
   },
@@ -75,6 +70,7 @@ Page({
     }
   },
   changeState(e){
+    console.log(e.detail);
     var that = this;
     var index = e.currentTarget.dataset.index;
     var state = this.data.goods[index].selected;

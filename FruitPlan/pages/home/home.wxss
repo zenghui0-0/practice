@@ -188,6 +188,7 @@
   overflow: hidden;
 }*/
 .goods .good-item{
+  align-content: flex-start;
   display: flex;
   border-bottom: 5rpx solid #E5E5E5;
 }
@@ -203,42 +204,39 @@
   font-size: 35rpx;
   margin: 10rpx 5rpx;
 }
-.goods .good-item .content .description{
+.goods .good-item .content .tag{
   display: flex;
   font-size: 25rpx;
   color: #777777;
   margin: 10rpx 5rpx;
 }
-.goods .good-item .content .price{
+.goods .good-item .content .cartControl{
+  display: flex;
+  margin: 10rpx 5rpx;
+}
+.goods .good-item .content .cartControl .price{
   display: flex;
   font-weight:500;
   color:#FF4500;
   margin: 40rpx 5rpx 0rpx;
 }
-.goods .good-item .content .price .unit{
+.goods .good-item .content .cartControl .price .unit{
   font-size: 22rpx;
-  margin: 15rpx 0rpx;
+  margin: 15rpx 0rpx 0rpx;
 }
-.goods .good-item .content .price .amount{
-  font-size: 22rpx;
-  color: #000000;
-  margin: 15rpx 10rpx;
+
+.goods .good-item .content .cartControl .add{
+  margin: 10rpx 80rpx 0rpx;
 }
-.goods .good-item .cartControl{
-  margin: 10rpx 20rpx ;
-  font-size: 30rpx;
+.goods .good-item .content .cartControl .remove{
+ margin: 10rpx 80rpx 0rpx;
 }
-.goods .good-item .cartControl .add{
-  margin: 70rpx ;
-}
-.goods .good-item .cartControl .remove{
- margin: 70rpx ;
-}
-.goods .good-item .cartControl .sellout{
-  margin: 80rpx 30rpx;
+.goods .good-item .content .cartControl .sellout{
+  margin: 10rpx 80rpx 0rpx;
   background-color: #E5E5E5;
   border: solid;
   border-radius:15%;
   border-color: #000000;
   border-width: 1rpx;
 }
+

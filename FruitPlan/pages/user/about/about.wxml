@@ -8,5 +8,8 @@
 <button class="weui-cells" type="default-light" open-type="contact" size="20" session-from="weapp">联系客服 </button>
 <text>{{userInfo.nickName }}</text>
 <text>{{formatted_address}} {{district}}</text>
-
+<!--cart -->
+<view class="cart">
+  <image style="width: 80rpx; height: 80rpx" src="/assets/images/cart_red.png"> </image>
+</view>
 <!--text>{{latitude}}</text-->
