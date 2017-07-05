@@ -69,22 +69,22 @@ Page({
       })
     }
   },
-  changeState(e){
+  addCart(e){
     console.log(e.detail);
     var that = this;
     var index = e.currentTarget.dataset.index;
-    var state = this.data.goods[index].selected;
-    if (state){
-      this.data.goods[index].selected = false;
-      that.setData({
-          goods: this.data.goods
-        })
-    }
-    else{
-      this.data.goods[index].selected = true;
-      that.setData({
-        goods: this.data.goods
-      })
-    }
+    this.data.goods[index].Count += 1;
+    that.setData({
+      goods : this.data.goods
+    })
+  },
+  decreaseCart(e){
+    console.log(e.detail);
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    this.data.goods[index].Count -= 1;
+    that.setData({
+      goods: this.data.goods
+    })
   }
 })

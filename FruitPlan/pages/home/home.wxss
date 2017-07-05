@@ -212,7 +212,7 @@
 }
 .goods .good-item .content .cartControl{
   display: flex;
-  margin: 10rpx 5rpx;
+
 }
 .goods .good-item .content .cartControl .price{
   display: flex;
@@ -225,18 +225,61 @@
   margin: 15rpx 0rpx 0rpx;
 }
 
-.goods .good-item .content .cartControl .add{
-  margin: 10rpx 80rpx 0rpx;
-}
-.goods .good-item .content .cartControl .remove{
- margin: 10rpx 80rpx 0rpx;
-}
-.goods .good-item .content .cartControl .sellout{
-  margin: 10rpx 80rpx 0rpx;
-  background-color: #E5E5E5;
+.goods .good-item .content .cartControl .buy{
+  position: absolute;
+  right : 30rpx;
+  background-color: #FF0000;
+  color:#fff;
+  font-family:Microsoft Yahei;
+  padding: 10rpx 40rpx 10rpx 40rpx;
   border: solid;
-  border-radius:15%;
-  border-color: #000000;
-  border-width: 1rpx;
+  border-radius:40rpx;
+  border-color: #FF0000;
+  border-width: 0rpx;
+}
+.goods .good-item .content .cartControl .count{
+ display: flex;
+}
+.goods .good-item .content .cartControl .count .number{
+ margin: 30rpx 5rpx;
+ font-size: 50rpx;
+ 
+}
+.goods .good-item .content .cartControl .count .add{
+  position: absolute;
+  right : 30rpx;
+  background-color: #FF0000;
+  color:#fff;
+  font-family:Microsoft Yahei;
+  padding: 10rpx 40rpx 10rpx 40rpx;
+  border: solid;
+  border-radius:40rpx;
+  border-color: #FF0000;
+  border-width: 0rpx;
+}
+.goods .good-item .content .cartControl .count .decrease{
+  position: absolute;
+  right : 160rpx;
+  background-color: #66CC66;
+  color:#fff;
+  font-family:Microsoft Yahei;
+  padding: 10rpx 40rpx 10rpx 40rpx;
+  border: solid;
+  border-radius:40rpx;
+  border-color: #339900;
+  border-width: 0rpx;
+}
+
+.goods .good-item .content .cartControl .sellout{
+  position: absolute;
+  right : 30rpx;
+  background-color: #E5E5E5;
+  color:#FF9900;
+  font-family:Microsoft Yahei;
+  padding: 15rpx;
+  border: solid;
+  border-radius:40rpx;
+  border-color: #FF9900;
+  border-width: 0rpx;
 }
 
