@@ -19,11 +19,11 @@ animation = wx.createAnimation({
     })
  animation.right('600rpx').step()
     this.setData({
-    animationSourceCity: animation2.export()
+    animationSourceCity: animation.export()
    })//右移
    setTimeout(function(){
-    animation2.left('30rpx').step({duration: 0, transformOrigin: "50%,50%",timingFunction: 'linear'})
+    animation.left('30rpx').step({duration: 0, transformOrigin: "50%,50%",timingFunction: 'linear'})
     that.setData({
-      animationSourceCity: animation2.export()
+      animationSourceCity: animation.export()
     })
    },285) //复位
