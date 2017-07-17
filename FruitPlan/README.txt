@@ -27,3 +27,6 @@ animation = wx.createAnimation({
       animationSourceCity: animation.export()
     })
    },285) //复位
+
+
+var arr®ç wx.getStorageSync('cart') || [];
